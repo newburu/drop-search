@@ -71,3 +71,7 @@ gem 'friendly_id'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+group :development do
+  gem 'spring-commands-rspec'
+end
