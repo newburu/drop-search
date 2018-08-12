@@ -104,3 +104,5 @@ end
 group :test do
   gem 'simplecov-rcov'
 end
+
+gem 'rollbar'
