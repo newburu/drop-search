@@ -68,3 +68,6 @@ gem 'activerecord-import'
 gem 'jpmobile'
 gem 'devise'
 gem 'friendly_id'
+group :development, :test do
+  gem 'rspec-rails'
+end
