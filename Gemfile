@@ -111,3 +111,4 @@ group :development do
 end
 
 gem 'bootstrap'
+gem 'font-awesome-rails'
