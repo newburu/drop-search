@@ -91,3 +91,5 @@ end
 group :development do
   gem 'better_errors'
 end
+
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
