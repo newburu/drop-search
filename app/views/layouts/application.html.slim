@@ -1,11 +1,76 @@
 doctype html
-html
+html lang="en"
   head
-    title
-      | MarketPrice
+    = render 'shared/analytics' if Rails.env.production?
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="twitter:card" content="summary"
+    / 大きいサイズ：meta name="twitter:card" content="summary_large_image"
+    meta name="twitter:site" content="@#{Settings.system[:twitter_site]}"
+    meta name="og:title" content="#{Settings.system[:title]}"
+    meta name="og:description" content="#{Settings.system[:description]}"
+    meta name="og:image" content="#{Settings.system[:url]}/#{image_path('eyecatch.jpg')}"
+    = favicon_link_tag
+    title= content_for?(:title) ? yield(:title) : Settings.system[:title]
     = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    /! Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+
   body
-    = yield
+    .menu.nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      = link_to Settings.system[:title], root_path, {class: 'navbar-brand'}
+      button.navbar-toggler.navbar-toggler-right type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+      #navbar.navbar-collapse.collapse
+        ul.navbar-nav.mr-auto
+          - if user_signed_in?
+            li.nav-item = link_to "最新情報", root_path, {class: "nav-link"}
+            li.nav-item.dropdown
+              = link_to 'マスタ設定', '#', {class: "nav-link dropdown-toggle", data: {toggle: "dropdown"}}
+              .dropdown-menu
+                = link_to 'サイト種類', site_kinds_path, {class: "dropdown-item"}
+                = link_to 'サーバ種類', server_kinds_path, {class: "dropdown-item"}
+          - else
+            = link_to '最新情報', root_path, {class: "nav-link"}
+
+          li.nav-item = link_to "このサイトについて", static_pages_info_path, {class: "nav-link"}
+          li.nav-item = link_to "更新履歴＆予定", static_pages_update_path, {class: "nav-link"}
+          - if Settings.system[:bbs_url].present?
+            li.nav-item = link_to "BBS(要望・問い合わせ)", Settings.system[:bbs_url], {class: "nav-link", target: "_blank"}
+        ul.nav.navbar-nav
+          - if user_signed_in?
+            span.navbar-text
+              = "#{current_user.name}さん"
+            li.nav-item = link_to 'ログアウト', destroy_user_session_path, {class: "nav-link"}
+          - else
+            li.nav-item = link_to "Twitterでログイン", user_twitter_omniauth_authorize_path, {class: "nav-link"}
+
+  - if controller_name != "portals" || action_name != "index"
+    .container
+      .row
+        .col-lg
+          - flash.each do |key, value|
+            div class="alert alert-#{key}"
+              = value
+          = yield
+  - else
+    .row
+      .col-lg
+        - flash.each do |key, value|
+          div class="alert alert-#{key}"
+            = value
+        = yield
+
+    p#page-top
+      = link_to "PAGE TOP", "#"
+
+  = render 'shared/adsense'
+
+  .footer
+    .container
+      .row.copyarea.text-center
+        p class="license" &copy; Copyright. 2018 Newburu All Rights Reserved.

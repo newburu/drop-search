@@ -1,0 +1,6 @@
+ja:
+  msg:
+    create:
+      successfully: "登録しました。"
+    update:
+      successfully: "更新しました。"

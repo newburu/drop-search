@@ -1,0 +1,17 @@
+ja:
+  simple_form:
+    "yes": 'はい'
+    "no": 'いいえ'
+    required:
+      text: 'required'
+      mark: '*'
+      message: '印のついている項目は入力が必須です。'
+    error_notification:
+      default_message: "エラーがあります。確認してください。"
+    delete_confirm: "削除しますか？"
+    btn:
+      show: '参照'
+      edit: '更新'
+      destory: '削除'
+      back: '戻る'
+      download: 'ダウンロード'

@@ -1,0 +1,8 @@
+ja:
+  portal:
+     mypage: 最新情報
+  activerecord:
+    models:
+      portal: ポータル
+    attributes:
+      portal:

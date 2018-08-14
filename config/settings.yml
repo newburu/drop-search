@@ -1,0 +1,17 @@
+system:
+  title: '相場チェッカー'
+  url: 'https://market_price.herokuapp.com/'
+  bbs_url: 'http://newburu.main.jp/bbs/market_price/joyful.cgi'
+  description: '相場情報を蓄積し、露店放置の参考に！'
+  twitter_site: newburu
+  twitter:
+    url: 'https://twitter.com/'
+    tweet_url: 'http://twitter.com/intent/tweet?'
+    share_url: 'http://twitter.com/share?'
+  portal:
+    limit: 10
+  image:
+    thumbnail:
+      size: "52x75"
+  send_dm:
+    timing: [0,1,3,5,10]

@@ -1,0 +1,78 @@
+.main1-app
+  .container
+    .row
+      .col-sm-12
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        h2.font-weight-bold
+          = "日々、市場情報を蓄積しています。"
+          p
+            = "蓄積された情報から、露店価格を設定しよう！"
+    .row
+      .col-sm-2
+      - unless current_user.present?
+        .col-sm-10
+          = link_to user_twitter_omniauth_authorize_path, {class: "btn btn-social btn-twitter"}
+            i.fa.fa-twitter.left
+            = "Twitterでログイン"
+
+.main2-app
+  .container
+    .row
+      .col-sm-4
+        .main2-sub
+          h3
+            = "市場履歴"
+            p
+              = image_tag "stock.jpg", size: "250x250"
+            p
+              = "取引された履歴が確認出来ます。"
+      .col-sm-4
+        .main2-sub
+          h3
+            = "アイテム検索"
+            p
+              = image_tag "search.jpg", size: "250x250"
+            p
+              = "売買したいアイテムを検索することができます。"
+      .col-sm-4
+        .main2-sub
+          h3
+            = "Twitter連携"
+            p
+              = image_tag "sns.jpg", size: "250x250"
+            p
+              = "Twitterと連携しているため、定期的に当サイトを確認しなくても最新情報をゲット出来ます。"
+
+.main3-app
+  .container
+    .row
+      .col-sm-5
+        = image_tag "circle.jpg", class: "img-responsive center-block"
+      .col-sm-7
+        h2
+          = "もっと共有して、輪を広げよう！"
+          br
+          br
+          p
+            = "当サイトの拡散にご協力ください。"
+          br
+          br
+          p
+            = link_to Settings.system[:twitter][:share_url] + "url=#{Settings.system[:url]}&text=#{Settings.system[:description]}%0a%0a＃" + "#{Settings.system[:title]}%0a", {class: "btn btn-social btn-twitter", target: "_blank"}
+              i.fa.fa-twitter.left
+              = "Twitterで共有"

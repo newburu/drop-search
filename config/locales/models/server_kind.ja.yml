@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      server_kind: サーバ種類
+    attributes:
+      server_kind:
+        name: 名称

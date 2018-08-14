@@ -1,0 +1,16 @@
+h1 参照
+hr
+.card
+  .card-header
+    strong = "#{t('activerecord.attributes.server_kind.name')}:"
+  .card-body
+    = @server_kind.name
+
+hr
+.btn-toolbar
+  - if admin_user?
+    .btn-group.mr-2
+      = link_to t('simple_form.btn.edit'), edit_server_kind_path(@server_kind), class: "btn btn-primary"
+  .btn-group.mr-2
+    = link_to t('simple_form.btn.back'), server_kinds_path, class: "btn btn-secondary"
+hr

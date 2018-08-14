@@ -1,0 +1,30 @@
+h1 = t('portal.mypage')
+hr
+= search_form_for(@q, url: mypage_path) do |f|
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.server_kind.name')
+      = hidden_field_tag :mode, params[:mode]
+  .btn-toolbar
+    .btn-group.mr-2
+      = button_tag type: 'submit', class: "btn btn-primary"
+        i.fa.fa-search.left
+          = t('helpers.submit.search')
+
+hr
+
+table.table.table-striped.table-hover.table-responsive.table-bordered
+  thead
+    tr
+      th = sort_link(@q, :name)
+      th
+
+  tbody
+    - @server_kinds.each do |server_kind|
+      tr
+        td = server_kind.name
+        td
+          = link_to t('simple_form.btn.show'), server_kind_path(server_kind), class: 'btn btn-light'
+
+hr
+= paginate @server_kinds

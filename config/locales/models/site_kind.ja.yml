@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      site_kind: サイト種類
+    attributes:
+      site_kind:
+        name: 名称

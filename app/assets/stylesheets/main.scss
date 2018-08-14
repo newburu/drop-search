@@ -1,0 +1,201 @@
+html {
+  font-size: 12px;
+}
+
+input[aria-invalid="true"], textarea[aria-invalid="true"] {
+  border: 1px solid #f00;
+  box-shadow: 0 0 4px 0 #f00;
+}
+
+.skeleton {
+  background-color: rgba(255,255,255,0);
+}
+
+body {font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;}
+
+/*　ナビゲーションバー　navbar-static */
+.menu{
+  margin: 0
+}
+
+/* main1-app Bootstrap-シングルページ制作２*/
+.main1-app {
+  padding: 20px 0 20px 0;
+  min-height: 500px;
+}
+
+.main1-app img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 50px auto 0 auto;
+  vertical-align: bottom;
+}
+
+.carousel-item.thumb {
+  height: 160px;
+  width:  160px;
+}
+
+.main1-app h1 {
+  margin: 0 0 30px 0;
+  font-size: 50px;
+  font-family: 'sans-serif';
+  line-height: 1.2;
+}
+
+.main1-app p {
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+}
+
+.main1-app .button {
+  text-shadow: none;
+}
+
+/* main1-app 背景画像の設定 */
+.main1-app {
+  background-image: image-url("top.jpg");
+  background-position: 35% 50%;
+  background-size: cover;
+}
+
+/* main1-app メディアクエリの設定 */
+@media (max-width: 450px) {
+  .main1-app {
+    padding: 30px 0 30px 0;
+  }
+  .main1-app h1 {
+    font-size: 40px;
+  }
+  .main1-app p{
+    font-size: 16px;
+  }
+
+}
+
+/* main2-app Bootstrap-シングルページ制作３ */
+.main2-app {
+  padding: 100px 0 70px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.main2-app img  {
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto 30px auto;
+  vertical-align: bottom;
+}
+
+.main2-app h2 {
+  margin: 0 0 15px 0;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.main2-app p  {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* main3-app Bootstrap-シングルページ制作４　*/
+.main3-app  {
+  padding: 70px 0 70px 0;
+  background-color: #4e95c9;
+  color: #fff;
+}
+
+.main3-app img  {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 35px auto;
+  vertical-align: bottom;
+}
+
+.main3-app h2 {
+  margin: 0 0 50px 0;
+  font-size: 28px;
+  line-height: 1.5;
+}
+
+.main3-app p  {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* フッター Bootstrap-シングルページ制作６*/
+.footer{
+  padding: 15px 0 25px 0;
+  background-color: #353535;
+  color: #fff;
+}
+
+.footer p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.tel{
+  padding-bottom: 15px;
+}
+
+.footer address{
+  margin: 0 0 3px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* essential */
+.essential{
+  color: #ff0000;
+  font-weight: normal;
+  font-size: 120%;
+}
+
+/* フォーム */
+.form-control{
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .formarea{
+    padding: 15px 0 0 0;
+    text-align: center;
+  }
+  .regist_button{
+    margin-left: 125px;
+  }
+}
+
+.copyarea{
+  padding: 30px 0 0px 0;
+  background-color: #353535;
+  color: #fff;
+}
+
+/* ページトップ */
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 80%;
+}
+#page-top a {
+  background: #666;
+  text-decoration: none;
+  color: #fff;
+  width: 100px;
+  padding: 25px 0;
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+}
+#page-top a:hover {
+  text-decoration: none;
+  background: #999;
+}
