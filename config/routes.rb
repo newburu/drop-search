@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :item_kinds
   resources :server_kinds
   resources :site_kinds
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
