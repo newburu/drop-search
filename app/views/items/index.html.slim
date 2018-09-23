@@ -1,0 +1,48 @@
+h1 = t('activerecord.models.item')
+hr
+= search_form_for @q do |f|
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.item.name')
+      = hidden_field_tag :mode, params[:mode]
+  .btn-toolbar
+    .btn-group.mr-2
+      = button_tag type: 'submit', class: "btn btn-primary"
+        i.fa.fa-search.left
+          = t('helpers.submit.search')
+    - if params[:mode] == 'dialog'
+      .btn-group.mr-2
+        = button_tag t('helpers.submit.close'), type: 'button', class: "btn btn-secondary", onclick: 'window.close()'
+    - else
+      - if login?
+        .btn-group.mr-2
+          = link_to t('helpers.submit.create'), new_item_path, class: "btn btn-secondary"
+
+hr
+
+table.table.table-striped.table-hover.table-responsive.table-bordered
+  thead
+    tr
+      th = sort_link(@q, :item_kind_name, t('activerecord.attributes.item.item_kind'))
+      th = sort_link(@q, :name)
+      - if params[:mode] != 'dialog'
+        th
+        - if login?
+          th
+          th
+
+  tbody
+    - @items.each do |item|
+      tr
+        td = item.item_kind.name
+        td = item.name
+        td
+          = link_to t('simple_form.btn.show'), item, class: 'btn btn-light'
+        - if login?
+          td
+            = link_to t('simple_form.btn.edit'), edit_item_path(item), class: 'btn btn-light'
+          td
+            = link_to t('simple_form.btn.destory'), item, data: { confirm: t('simple_form.delete_confirm') }, method: :delete, class: 'btn btn-light'
+
+hr
+= paginate @items

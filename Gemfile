@@ -120,3 +120,11 @@ gem 'jquery-rails'
 
 gem 'config'
 gem 'activerecord-session_store'
+
+# ファイルアップロード
+gem "carrierwave"
+gem "mini_magick"
+
+# 初期データ登録
+gem 'seed-fu'
+

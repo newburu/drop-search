@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+    attributes:
+      item:
+        item_kind: 種類
+        name: 名称
+        image: 画像

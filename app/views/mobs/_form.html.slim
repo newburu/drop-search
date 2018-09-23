@@ -1,0 +1,16 @@
+= simple_form_for(@mob) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :name
+    = f.input :image
+
+  hr
+  
+  .btn-toolbar
+    .btn-group.mr-2
+      .form-actions
+        = f.button :submit, class: "btn btn-primary"
+  
+  hr

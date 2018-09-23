@@ -27,23 +27,26 @@ html lang="en"
         span.navbar-toggler-icon
       #navbar.navbar-collapse.collapse
         ul.navbar-nav.mr-auto
-          - if user_signed_in?
-            li.nav-item = link_to "最新情報", root_path, {class: "nav-link"}
+          li.nav-item.dropdown
+            = link_to '検索', '#', {class: "nav-link dropdown-toggle", data: {toggle: "dropdown"}}
+            .dropdown-menu
+              = link_to 'モンスターから検索', mobs_path, {class: "dropdown-item"}
+              = link_to 'アイテムから検索', items_path, {class: "dropdown-item"}
+          - if login?
             li.nav-item.dropdown
               = link_to 'マスタ設定', '#', {class: "nav-link dropdown-toggle", data: {toggle: "dropdown"}}
               .dropdown-menu
-                = link_to 'サイト種類', site_kinds_path, {class: "dropdown-item"}
-                = link_to 'サーバ種類', server_kinds_path, {class: "dropdown-item"}
                 = link_to 'アイテム種類', item_kinds_path, {class: "dropdown-item"}
-          - else
-            = link_to '最新情報', root_path, {class: "nav-link"}
+                = link_to 'アイテム', items_path, {class: "dropdown-item"}
+                = link_to 'モンスター', mobs_path, {class: "dropdown-item"}
+                = link_to 'モンスター・アイテム', mob_items_path, {class: "dropdown-item"}
 
           li.nav-item = link_to "このサイトについて", static_pages_info_path, {class: "nav-link"}
           li.nav-item = link_to "更新履歴＆予定", static_pages_update_path, {class: "nav-link"}
           - if Settings.system[:bbs_url].present?
             li.nav-item = link_to "BBS(要望・問い合わせ)", Settings.system[:bbs_url], {class: "nav-link", target: "_blank"}
         ul.nav.navbar-nav
-          - if user_signed_in?
+          - if login?
             span.navbar-text
               = "#{current_user.name}さん"
             li.nav-item = link_to 'ログアウト', destroy_user_session_path, {class: "nav-link"}

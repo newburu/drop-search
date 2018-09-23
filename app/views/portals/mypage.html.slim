@@ -3,7 +3,7 @@ hr
 = search_form_for(@q, url: mypage_path) do |f|
   .row
     .col-sm-5
-      = f.input :name_cont, required: false, label: t('activerecord.attributes.server_kind.name')
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.site_kind.name')
       = hidden_field_tag :mode, params[:mode]
   .btn-toolbar
     .btn-group.mr-2
@@ -20,11 +20,11 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
       th
 
   tbody
-    - @server_kinds.each do |server_kind|
+    - @items.each do |item|
       tr
-        td = server_kind.name
+        td = item.name
         td
-          = link_to t('simple_form.btn.show'), server_kind_path(server_kind), class: 'btn btn-light'
+          = link_to t('simple_form.btn.show'), item_path(item), class: 'btn btn-light'
 
 hr
-= paginate @server_kinds
+= paginate @items

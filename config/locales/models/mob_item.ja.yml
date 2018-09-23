@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      mob_item: モンスター・アイテム
+    attributes:
+      mob_item:
+        mob: モンスター
+        item: アイテム

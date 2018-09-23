@@ -1,0 +1,26 @@
+h1 参照
+hr
+.card
+  .card-header
+    strong = "#{t('activerecord.attributes.item.item_kind')}:"
+  .card-body
+    = @item.item_kind.name
+.card
+  .card-header
+    strong = "#{t('activerecord.attributes.item.name')}:"
+  .card-body
+    = @item.name
+.card
+  .card-header
+    strong = "#{t('activerecord.attributes.item.image')}:"
+  .card-body
+    = image_tag @item.image.to_s
+
+hr
+.btn-toolbar
+  - if login?
+    .btn-group.mr-2
+      = link_to t('simple_form.btn.edit'), edit_item_path(@item), class: "btn btn-primary"
+  .btn-group.mr-2
+    = link_to t('simple_form.btn.back'), items_path, class: "btn btn-secondary"
+hr

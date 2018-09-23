@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      mob: モンスター
+    attributes:
+      mob:
+        name: 名称
+        image: 画像

@@ -1,8 +1,8 @@
 system:
-  title: '相場チェッカー'
-  url: 'https://market_price.herokuapp.com/'
-  bbs_url: 'http://newburu.main.jp/bbs/market_price/joyful.cgi'
-  description: '相場情報を蓄積し、露店放置の参考に！'
+  title: 'DROP検索'
+  url: 'https://drop-search.herokuapp.com/'
+  bbs_url: 'http://newburu.main.jp/bbs/drop-search/joyful.cgi'
+  description: '必要なアイテムから狩場を決める際の参考に！'
   twitter_site: newburu
   twitter:
     url: 'https://twitter.com/'
