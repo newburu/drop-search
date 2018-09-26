@@ -7,3 +7,8 @@ ja:
         item_kind: 種類
         name: 名称
         image: 画像
+  items:
+    show:
+      title: アイテム情報
+      mob:
+        name: DROPモンスター

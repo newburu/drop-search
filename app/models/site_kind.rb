@@ -1,2 +1,0 @@
-class SiteKind < ApplicationRecord
-end

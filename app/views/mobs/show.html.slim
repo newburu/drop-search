@@ -1,4 +1,4 @@
-h1 参照
+h1 = t('.title')
 hr
 .card
   .card-header
@@ -10,6 +10,11 @@ hr
     strong = "#{t('activerecord.attributes.mob.image')}:"
   .card-body
     = image_tag @mob.image.to_s
+.card
+  .card-header
+    strong = "#{t('.item.name')}:"
+  .card-body
+    = render 'shared/list', list: @mob.items
 
 hr
 .btn-toolbar

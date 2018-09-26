@@ -6,3 +6,8 @@ ja:
       mob:
         name: 名称
         image: 画像
+  mobs:
+    show:
+      title: モンスター情報
+      item:
+        name: DROPアイテム
