@@ -21,7 +21,7 @@
         h2.font-weight-bold
           = "いつもご協力ありがとうございます。"
           p
-          = "皆様のご協力(情報登録)で成り立っています。新規・間違いがありましたら、変更お願いいたします。"
+          = "皆様のご協力で成り立っています♪ご自由に編集ください。"
     .row
       .col-sm-2
       - unless current_user.present?
@@ -40,7 +40,15 @@
             p
               = image_tag "search.jpg", size: "250x250"
             p
-              = "目指したいアイテムを検索することができます。"
+              = "目的のアイテムを検索することができます。"
+      .col-sm-4
+        .main2-sub
+          h3
+            = "自由編集"
+            p
+              = image_tag "edit.jpg", size: "250x250"
+            p
+              = "Twitter経由でログインすることで、自由に編集が可能になります。"
       .col-sm-4
         .main2-sub
           h3
