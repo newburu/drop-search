@@ -6,3 +6,10 @@ ja:
       mob_item:
         mob: モンスター
         item: アイテム
+  mob_items:
+    index:
+      title: モンスター・アイテム検索
+      mob:
+        name: モンスター名
+      item:
+        name: アイテム名

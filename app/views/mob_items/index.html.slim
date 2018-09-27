@@ -1,10 +1,10 @@
-h1 = t('activerecord.models.mob_item')
+h1 = t('.title')
 hr
 = search_form_for @q do |f|
   .row
     .col-sm-5
-      = f.input :mob_name_cont, required: false, label: t('activerecord.attributes.mob.name')
-      = f.input :item_name_cont, required: false, label: t('activerecord.attributes.item.name')
+      = f.input :mob_name_cont, required: false, label: t('.mob.name')
+      = f.input :item_name_cont, required: false, label: t('.item.name')
       = hidden_field_tag :mode, params[:mode]
   .btn-toolbar
     .btn-group.mr-2

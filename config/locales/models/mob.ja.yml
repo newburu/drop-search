@@ -7,6 +7,8 @@ ja:
         name: 名称
         image: 画像
   mobs:
+    index:
+      title: モンスター検索
     show:
       title: モンスター情報
       item:

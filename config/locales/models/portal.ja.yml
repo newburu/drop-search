@@ -1,6 +1,6 @@
 ja:
   portal:
-     mypage: 最新情報
+     mypage: アイテム検索
   activerecord:
     models:
       portal: ポータル

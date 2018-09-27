@@ -8,6 +8,8 @@ ja:
         name: 名称
         image: 画像
   items:
+    index:
+      title: アイテム検索
     show:
       title: アイテム情報
       mob:
