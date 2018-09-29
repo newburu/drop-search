@@ -24,8 +24,8 @@ hr
 table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
-      th = sort_link(@q, :mob_name)
-      th = sort_link(@q, :item_name)
+      th = sort_link(@q, :mob_name  ,t('.mob.name') )
+      th = sort_link(@q, :item_name ,t('.item.name'))
       - if params[:mode] != 'dialog'
         th
         - if login?
