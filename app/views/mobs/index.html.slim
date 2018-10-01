@@ -26,7 +26,7 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
       th = sort_link(@q, :name)
       - if params[:mode] != 'dialog'
         th
-        - if admin_user?
+        - if login?
           th
           th
 

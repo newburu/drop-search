@@ -9,7 +9,9 @@ hr
   .card-header
     strong = "#{t('activerecord.attributes.mob.image')}:"
   .card-body
-    = image_tag @mob.image.to_s
+    - src = 'now_printing.png'
+    - src = @mob.image.to_s if @mob.image.present?
+    = image_tag(src, size: '100x100')
 .card
   .card-header
     strong = "#{t('.item.name')}:"
