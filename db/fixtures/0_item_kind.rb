@@ -1,4 +1,4 @@
-ItemKind.seed_once(:id,
+ItemKind.seed(:id,
   { id: 1, name: '武器' },
   { id: 2, name: '防具' },
   { id: 3, name: '一般魔法' },
@@ -8,4 +8,6 @@ ItemKind.seed_once(:id,
   { id: 7, name: 'ナイト技術' },
   { id: 8, name: 'ドラゴンナイト秘技' },
   { id: 9, name: 'イリュージョニスト魔法' },
+  { id: 10, name: '戦士魔法' },
+  { id: 11, name: 'アイテム' },
 )
