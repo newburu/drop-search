@@ -1,0 +1,11 @@
+- if @mob.present?
+  meta name="twitter:card" content="summary"
+  / 大きいサイズ：meta name="twitter:card" content="summary_large_image"
+  meta name="twitter:site" content="@#{Settings.system[:twitter_site]}"
+  meta name="og:title" content="#{Settings.system[:title]}:#{@mob.name}のDROPは…"
+  meta name="og:description" content="#{Settings.system[:description]}"
+  - src = 'eyecatch.jpg'
+  - src = @item.image.to_s if @mob.image.present?
+  meta name="og:image" content="#{image_path(src)}"
+- else
+  = render 'layouts/card'
