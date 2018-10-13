@@ -32,6 +32,7 @@ CSV.foreach('db/fixtures/init_data.csv') do |row|
         end
       end
     end
-    rescue => e
+  rescue => e
+    p "エラー！！"
   end
 end
