@@ -14,19 +14,19 @@ CSV.foreach('db/fixtures/init_data.csv') do |row|
       if mob.nil?
         p "Mob:[#{mob_name}]がない為、追加します。"
         mob = Mob.create(name: mob_name, map_area: map_area)
-      end
-      row.each_with_index do |col, idx|
-        if idx >= 2
-          item_name = row[idx]
-          if item_name.present?
-            item = Item.where(name: item_name).first
-            if item.nil?
-              p "Item:[#{item_name}]がない為、追加します。"
-              item = Item.create(name: item_name, item_kind_id: 99)
-            end
-            mob_item = MobItem.where(mob: mob, item: item).first
-            if mob_item.nil?
-              mob_item = MobItem.create(mob: mob, item: item)
+        row.each_with_index do |col, idx|
+          if idx >= 2
+            item_name = row[idx]
+            if item_name.present?
+              item = Item.where(name: item_name).first
+              if item.nil?
+                p "Item:[#{item_name}]がない為、追加します。"
+                item = Item.create(name: item_name, item_kind_id: 99)
+              end
+              mob_item = MobItem.where(mob: mob, item: item).first
+              if mob_item.nil?
+                mob_item = MobItem.create(mob: mob, item: item)
+              end
             end
           end
         end
