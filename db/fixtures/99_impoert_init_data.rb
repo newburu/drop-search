@@ -1,6 +1,8 @@
 require "csv"
 
+cnt=0
 CSV.foreach('db/fixtures/init_data.csv') do |row|
+  return if cnt > 100
   begin
     ActiveRecord::Base.transaction do
       map_area_name = row[0]
@@ -12,6 +14,7 @@ CSV.foreach('db/fixtures/init_data.csv') do |row|
       mob_name = row[1]
       mob = Mob.where(name: mob_name).first
       if mob.nil?
+        cnt+=1
         p "Mob:[#{mob_name}]がない為、追加します。"
         mob = Mob.create(name: mob_name, map_area: map_area)
         row.each_with_index do |col, idx|
