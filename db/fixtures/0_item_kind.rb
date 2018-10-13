@@ -10,4 +10,5 @@ ItemKind.seed(:id,
   { id: 9, name: 'イリュージョニスト魔法' },
   { id: 10, name: '戦士魔法' },
   { id: 11, name: 'アイテム' },
+  { id: 99, name: '不明' },
 )
