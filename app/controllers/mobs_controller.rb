@@ -13,7 +13,7 @@ class MobsController < InheritedResources::Base
   private
 
     def mob_params
-      params.require(:mob).permit(:name, :image)
+      params.require(:mob).permit(:map_area_id, :name, :image)
     end
 end
 

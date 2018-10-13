@@ -1,0 +1,2 @@
+class MapArea < ApplicationRecord
+end

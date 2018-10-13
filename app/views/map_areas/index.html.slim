@@ -1,9 +1,9 @@
-h1 = t('activerecord.models.item_kind')
+h1 = t('activerecord.models.map_area')
 hr
 = search_form_for @q do |f|
   .row
     .col-sm-5
-      = f.input :name_cont, required: false, label: t('activerecord.attributes.item_kind.name')
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.map_area.name')
       = hidden_field_tag :mode, params[:mode]
   .btn-toolbar
     .btn-group.mr-2
@@ -16,7 +16,7 @@ hr
     - else
       - if admin_user?
         .btn-group.mr-2
-          = link_to t('helpers.submit.create'), new_item_kind_path, class: "btn btn-secondary"
+          = link_to t('helpers.submit.create'), new_map_area_path, class: "btn btn-secondary"
 
 hr
 
@@ -31,16 +31,16 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
           th
 
   tbody
-    - @item_kinds.each do |item_kind|
+    - @map_areas.each do |map_area|
       tr
-        td = item_kind.name
+        td = map_area.name
         td
-          = link_to t('simple_form.btn.show'), item_kind, class: 'btn btn-light'
+          = link_to t('simple_form.btn.show'), map_area, class: 'btn btn-light'
         - if admin_user?
           td
-            = link_to t('simple_form.btn.edit'), edit_item_kind_path(item_kind), class: 'btn btn-light'
+            = link_to t('simple_form.btn.edit'), edit_map_area_path(map_area), class: 'btn btn-light'
           td
-            = link_to t('simple_form.btn.destory'), item_kind, data: { confirm: t('simple_form.delete_confirm') }, method: :delete, class: 'btn btn-light'
+            = link_to t('simple_form.btn.destory'), map_area, data: { confirm: t('simple_form.delete_confirm') }, method: :delete, class: 'btn btn-light'
 
 hr
-= paginate @item_kinds
+= paginate @map_areas

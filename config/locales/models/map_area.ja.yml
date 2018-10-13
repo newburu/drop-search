@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      map_area: マップエリア
+    attributes:
+      map_area:
+        name: 名称

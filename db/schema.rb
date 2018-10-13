@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_104414) do
+ActiveRecord::Schema.define(version: 2018_10_03_023934) do
 
   create_table "friendly_id_slugs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "slug", null: false
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(version: 2018_09_22_104414) do
     t.index ["item_kind_id"], name: "index_items_on_item_kind_id"
   end
 
+  create_table "map_areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mob_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.bigint "mob_id"
     t.bigint "item_id"
@@ -53,6 +59,8 @@ ActiveRecord::Schema.define(version: 2018_09_22_104414) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "map_area_id"
+    t.index ["map_area_id"], name: "index_mobs_on_map_area_id"
   end
 
   create_table "sessions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
@@ -93,4 +101,5 @@ ActiveRecord::Schema.define(version: 2018_09_22_104414) do
   add_foreign_key "items", "item_kinds"
   add_foreign_key "mob_items", "items"
   add_foreign_key "mob_items", "mobs"
+  add_foreign_key "mobs", "map_areas"
 end

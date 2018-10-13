@@ -1,0 +1,16 @@
+h1 参照
+hr
+.card
+  .card-header
+    strong = "#{t('activerecord.attributes.map_area.name')}:"
+  .card-body
+    = @map_area.name
+
+hr
+.btn-toolbar
+  - if admin_user?
+    .btn-group.mr-2
+      = link_to t('simple_form.btn.edit'), edit_map_area_path(@map_area), class: "btn btn-primary"
+  .btn-group.mr-2
+    = link_to t('simple_form.btn.back'), map_areas_path, class: "btn btn-secondary"
+hr

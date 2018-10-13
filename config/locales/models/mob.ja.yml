@@ -4,6 +4,7 @@ ja:
       mob: モンスター
     attributes:
       mob:
+        map_area: マップエリア
         name: 名称
         image: 画像
   mobs:
