@@ -18,7 +18,7 @@ namespace :import_init_data do
           mob = Mob.where(name: mob_name).first
           if mob.nil?
             p "Mob:[#{mob_name}]がない為、追加します。"
-            mob = Mob.create(name: mob_name, map_area: map_area)
+            mob = Mob.create(name: mob_name)
             row.each_with_index do |col, idx|
               if idx >= 2
                 item_name = row[idx]
@@ -42,7 +42,7 @@ namespace :import_init_data do
           end
         end
       rescue => e
-        p "エラー！！"
+        p e
       end
     end
   end
