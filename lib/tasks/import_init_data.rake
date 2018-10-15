@@ -3,7 +3,9 @@ namespace :import_init_data do
   desc "初期データを登録するタスク"
 
   task :import, ['no'] => :environment do |task, args|
-    CSV.foreach("db/fixtures/init_data_#{args.no}.csv") do |row|
+    file_path = "db/fixtures/init_data.csv"
+    file_path = "db/fixtures/init_data_#{args.no}.csv" if args.no.present?
+    CSV.foreach(file_path) do |row|
       begin
         ActiveRecord::Base.transaction do
           map_area_name = row[0]
