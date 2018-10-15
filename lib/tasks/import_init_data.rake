@@ -36,6 +36,10 @@ namespace :import_init_data do
               end
             end
           end
+          mob_map_area = MobMapArea.where(mob: mob, map_area: map_area).first
+          if mob_map_area.nil?
+            mob_map_area = MobMapArea.create(mob: mob, map_area: map_area)
+          end
         end
       rescue => e
         p "エラー！！"

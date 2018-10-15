@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_023934) do
+ActiveRecord::Schema.define(version: 2018_10_15_142456) do
 
   create_table "friendly_id_slugs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "slug", null: false
@@ -54,13 +54,20 @@ ActiveRecord::Schema.define(version: 2018_10_03_023934) do
     t.index ["mob_id"], name: "index_mob_items_on_mob_id"
   end
 
+  create_table "mob_map_areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.bigint "mob_id"
+    t.bigint "map_area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["map_area_id"], name: "index_mob_map_areas_on_map_area_id"
+    t.index ["mob_id"], name: "index_mob_map_areas_on_mob_id"
+  end
+
   create_table "mobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "map_area_id"
-    t.index ["map_area_id"], name: "index_mobs_on_map_area_id"
   end
 
   create_table "sessions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
@@ -94,5 +101,6 @@ ActiveRecord::Schema.define(version: 2018_10_03_023934) do
   add_foreign_key "items", "item_kinds"
   add_foreign_key "mob_items", "items"
   add_foreign_key "mob_items", "mobs"
-  add_foreign_key "mobs", "map_areas"
+  add_foreign_key "mob_map_areas", "map_areas"
+  add_foreign_key "mob_map_areas", "mobs"
 end

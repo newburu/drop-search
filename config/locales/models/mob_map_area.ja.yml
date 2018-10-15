@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      mob_map_area: モンスター・マップエリア
+    attributes:
+      mob_map_area:
+        mob: モンスター
+        map_area: マップエリア
+  mob_map_areas:
+    index:
+      title: モンスター・マップエリア検索
+      mob:
+        name: モンスター名
+      map_area:
+        name: マップエリア名

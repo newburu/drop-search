@@ -1,16 +1,10 @@
-= simple_form_for(@mob) do |f|
+= simple_form_for(@mob_map_area) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.input :name
-    = f.input :image
-
-    .card
-      .card-header
-        strong = "#{t('activerecord.attributes.mob.map_area')}:"
-      .card-body
-        = render 'shared/list', list: @mob.map_areas
+    = f.association :mob
+    = f.association :map_area
 
   hr
   
@@ -18,5 +12,7 @@
     .btn-group.mr-2
       .form-actions
         = f.button :submit, class: "btn btn-primary"
+    .btn-group.mr-2
+      = link_to t('simple_form.btn.back'), mob_map_areas_path, class: "btn btn-secondary"
   
   hr

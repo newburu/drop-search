@@ -4,7 +4,7 @@ hr
   .card-header
     strong = "#{t('activerecord.attributes.mob.map_area')}:"
   .card-body
-    = @mob.map_area.try(:name)
+    = render 'shared/list', list: @mob.map_areas
 .card
   .card-header
     strong = "#{t('activerecord.attributes.mob.name')}:"

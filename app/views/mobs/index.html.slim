@@ -5,7 +5,7 @@ hr
     .col-sm-5
       = f.label :map_area_id_in, t('activerecord.attributes.mob.map_area')
       br
-      = f.collection_check_boxes :map_area_id_in, MapArea.all, :id, :name
+      = f.collection_check_boxes :mob_map_areas_map_area_id_in, MapArea.all, :id, :name
       = f.input :name_cont, required: false, label: t('activerecord.attributes.mob.name')
       = hidden_field_tag :mode, params[:mode]
   .btn-toolbar
@@ -37,7 +37,7 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
   tbody
     - @mobs.each do |mob|
       tr
-        td = mob.map_area.try(:name)
+        td = render 'shared/list', list: mob.map_areas
         td = mob.name
         td
           = link_to t('simple_form.btn.show'), mob, class: 'btn btn-light'

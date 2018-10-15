@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mob_map_areas
   resources :map_areas
   resources :mob_items
   resources :mobs
