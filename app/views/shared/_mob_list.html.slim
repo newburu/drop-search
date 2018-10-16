@@ -1,0 +1,12 @@
+.accordion#accordion role="tablist" aria-multiselectable="true"
+  - map_area_mobs.keys.each do |key|
+    .card
+      .card-header role="tab" id="header_#{key}"
+        h5.mb-0
+          a class="text-body" data-toggle="collapse" href="#body_#{key}" role="button" aria-expanded="true" aria-controls="body_#{key}"
+            = key
+      div id="body_#{key}" class="collapse show" role="tabpanel" aria-labelledby="header_#{key}" data-parent="#accordion"
+        .card-body
+          - map_area_mobs[key].each do |mob|
+            div
+              = link_to mob.name, polymorphic_path(mob)

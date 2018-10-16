@@ -8,4 +8,21 @@ class Item < ApplicationRecord
 
   # 検証
   validates :name, presence: true
+  
+  # マップエリアをキーとしたハッシュに変更
+  def map_area_mobs
+    ret = {}
+    self.mobs.each do |mob|
+      mob.map_areas.each do |map_area|
+        if ret[map_area.name].present?
+          ret[map_area.name].push(mob)
+        else
+          ret[map_area.name] = [mob]
+        end
+      end
+    end
+    
+    ret
+  end
+  
 end
