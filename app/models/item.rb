@@ -22,7 +22,7 @@ class Item < ApplicationRecord
       end
     end
     
-    ret
+    Hash[ ret.sort ]
   end
   
 end
