@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def admin_user?
-    login? #&& current_user.admin?
+    login? && current_user.admin?
   end
   
   def render_any(partials, options = {})
