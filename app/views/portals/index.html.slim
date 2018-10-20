@@ -22,13 +22,15 @@
           = "いつもご協力ありがとうございます。"
           p
           = "皆様のご協力で成り立っています♪ご自由に編集ください。"
-    .row
-      .col-sm-2
-      - unless current_user.present?
+    - unless current_user.present?
+      .row
         .col-sm-10
           = link_to user_twitter_omniauth_authorize_path, {class: "btn btn-social btn-twitter"}
             i.fa.fa-twitter.left
             = "Twitterでログイン"
+          = link_to items_path, {class: "btn btn-social btn-primary ml-3"}
+            i.fa.fa-search.left
+            = "アイテム検索"
 
 .main2-app
   .container
