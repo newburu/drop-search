@@ -9,6 +9,10 @@ class Item < ApplicationRecord
   # 検証
   validates :name, presence: true
   
+  def to_param
+    name
+  end
+  
   # マップエリアをキーとしたハッシュに変更
   def map_area_mobs
     ret = {}

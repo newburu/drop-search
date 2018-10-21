@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :mob_map_areas
   resources :map_areas
   resources :mob_items
-  resources :mobs
-  resources :items
+  resources :mobs, param: :name
+  resources :items, param: :name
   resources :item_kinds
   resources :server_kinds
   resources :site_kinds

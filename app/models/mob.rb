@@ -9,4 +9,9 @@ class Mob < ApplicationRecord
 
   # 検証
   validates :name, presence: true
+
+  def to_param
+    name
+  end
+  
 end

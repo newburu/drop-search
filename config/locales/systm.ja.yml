@@ -4,3 +4,4 @@ ja:
       successfully: "登録しました。"
     update:
       successfully: "更新しました。"
+    not_found: "見つかりません。"
