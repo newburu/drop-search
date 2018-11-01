@@ -18,6 +18,25 @@ class MobsController < InheritedResources::Base
     end
   end
 
+ def edit
+    @mob = Mob.find_by(name: params[:name])
+    
+    if @mob.nil?
+      redirect_to mobs_path(q: {name_cont: params[:name]}), flash: {warning: I18n.t('msg.not_found')}
+    end
+  end
+
+  def update
+    @mob = Mob.find_by(name: params[:name])
+    
+    if @mob.nil?
+      redirect_to mobs_path(q: {name_cont: params[:name]}), flash: {warning: I18n.t('msg.not_found')}
+    else
+      @mob.attributes = mob_params
+      @mob.save
+    end
+  end
+
   private
 
     def mob_params

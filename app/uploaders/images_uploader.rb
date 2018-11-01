@@ -44,4 +44,7 @@ class ImagesUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def filename
+    "#{model.name}.#{file.extension}" if original_filename.present?
+  end
 end

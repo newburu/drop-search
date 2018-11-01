@@ -18,6 +18,25 @@ class ItemsController < InheritedResources::Base
     end
   end
 
+  def edit
+    @item = Item.find_by(name: params[:name])
+    
+    if @item.nil?
+      redirect_to items_path(q: {name_cont: params[:name]}), flash: {warning: I18n.t('msg.not_found')}
+    end
+  end
+
+  def update
+    @item = Item.find_by(name: params[:name])
+    
+    if @item.nil?
+      redirect_to items_path(q: {name_cont: params[:name]}), flash: {warning: I18n.t('msg.not_found')}
+    else
+      @item.attributes = item_params
+      @item.save
+    end
+  end
+
   private
 
     def item_params
