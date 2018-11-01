@@ -34,6 +34,8 @@ class ItemsController < InheritedResources::Base
     else
       @item.attributes = item_params
       @item.save
+
+      redirect_to item_path(@item)
     end
   end
 

@@ -34,6 +34,8 @@ class MobsController < InheritedResources::Base
     else
       @mob.attributes = mob_params
       @mob.save
+
+      redirect_to mob_path(@mob)
     end
   end
 
