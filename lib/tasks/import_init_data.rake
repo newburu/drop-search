@@ -2,10 +2,11 @@ require "csv"
 namespace :import_init_data do
   desc "初期データを登録するタスク"
 
-  task :import, ['no'] => :environment do |task, args|
+  task :import, [:start_row] => :environment do |task, args|
     file_path = "db/fixtures/init_data.csv"
-    file_path = "db/fixtures/init_data_#{args.no}.csv" if args.no.present?
-    CSV.foreach(file_path) do |row|
+    start_row = args.start_row
+    CSV.foreach(file_path).with_index do |row, idx|
+      next if idx < start_row.to_i
       begin
         ActiveRecord::Base.transaction do
           map_area_name = row[0]
