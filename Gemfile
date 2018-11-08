@@ -123,6 +123,7 @@ gem 'activerecord-session_store'
 
 # ファイルアップロード
 gem "carrierwave"
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
 gem "mini_magick"
 
 # 初期データ登録
