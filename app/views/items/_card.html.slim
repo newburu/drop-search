@@ -6,6 +6,6 @@
   meta name="og:description" content="#{Settings.system[:description]}"
   - src = 'eyecatch.jpg'
   - src = @item.image.url if @item.image.present?
-  meta name="og:image" content="#{Settings.system[:url]}/#{image_path(src)}"
+  meta name="og:image" content="#{image_path(src)}"
 - else
   = render 'layouts/card'
