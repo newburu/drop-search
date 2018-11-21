@@ -129,3 +129,7 @@ gem "mini_magick"
 # 初期データ登録
 gem 'seed-fu'
 
+# 開発時のスクレイピング用
+group :development do
+  gem 'nokogiri'
+end
