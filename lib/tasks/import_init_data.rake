@@ -30,7 +30,7 @@ namespace :import_init_data do
                   if item.nil?
                     p "Item:[#{item_name}]がない為、追加します。"
                     file = "db/images/items/#{item_name}.jpg"
-                    item_image = File.open(file) if File.exist?(file)
+                    #item_image = File.open(file) if File.exist?(file)
                     item = Item.create!(name: item_name, item_kind_id: 99, image: item_image)
                   end
                   mob_item = MobItem.where(mob: mob, item: item).first
