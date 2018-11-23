@@ -13,6 +13,17 @@ namespace :update_image_data do
         p e
       end
     end
+    Mob.where(image: nil).each_with_index do |mob, idx|
+      begin
+        ActiveRecord::Base.transaction do
+          p "Mob:[#{mob.name}]がない為、追加します。"
+          file = "db/images/mobs/#{mob.name}.jpg"
+          mob.update!(image: File.open(file)) if File.exist?(file)
+        end
+      rescue => e
+        p e
+      end
+    end
   end
 
 end
