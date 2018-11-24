@@ -5,7 +5,7 @@ hr
     .col-sm-5
       = f.label :map_area_id_in, t('activerecord.attributes.mob.map_area')
       br
-      = f.collection_check_boxes :mob_map_areas_map_area_id_in, MapArea.all, :id, :name
+      = f.collection_select :mob_map_areas_map_area_id_in, MapArea.all, :id, :name, {}, {class: 'form-control multiselect multiselect-primary', multiple: true}
       = f.input :name_cont, required: false, label: t('activerecord.attributes.mob.name')
       = hidden_field_tag :mode, params[:mode]
   .btn-toolbar
