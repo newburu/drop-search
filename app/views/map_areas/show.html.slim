@@ -1,10 +1,15 @@
-h1 参照
+h1 = t('.title')
 hr
 .card
   .card-header
     strong = "#{t('activerecord.attributes.map_area.name')}:"
   .card-body
     = @map_area.name
+.card
+  .card-header
+    strong = "#{t('.mob.name')}:"
+  .card-body
+    = render 'shared/list', list: @map_area.mobs
 
 hr
 .btn-toolbar

@@ -27,6 +27,7 @@ html lang="en"
             .dropdown-menu
               = link_to 'モンスターから検索', mobs_path, {class: "dropdown-item"}
               = link_to 'アイテムから検索', items_path, {class: "dropdown-item"}
+              = link_to 'マップエリアから検索', map_areas_path, {class: "dropdown-item"}
           - if login?
             li.nav-item.dropdown
               = link_to 'マスタ設定', '#', {class: "nav-link dropdown-toggle", data: {toggle: "dropdown"}}

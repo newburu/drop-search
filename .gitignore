@@ -31,3 +31,4 @@
 coverage
 get_image_data.rake
 rake_get_image_data_list.sh
+.vscode

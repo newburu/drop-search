@@ -5,3 +5,10 @@ ja:
     attributes:
       map_area:
         name: 名称
+  map_areas:
+    index:
+      title: マップエリア検索
+    show:
+      title: マップエリア情報
+      mob:
+        name: 出現モンスター
