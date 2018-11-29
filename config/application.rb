@@ -6,8 +6,12 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module MarketPrice
+module DropSearch
   class Application < Rails::Application
+    def inspect
+      "#<#{self.class}>"
+    end
+
     config.generators do |g|
       g.assets false
       g.helper false
