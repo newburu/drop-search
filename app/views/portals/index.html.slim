@@ -77,6 +77,6 @@
           br
           br
           p
-            = link_to Settings.system[:twitter][:share_url] + "url=#{Settings.system[:url]}&text=#{Settings.system[:description]}%0a%0a＃" + "#{Settings.system[:title]}%0a", {class: "btn btn-social btn-twitter", target: "_blank"}
+            = link_to Settings.system[:twitter][:share_url] + "url=#{Settings.system[:url]}&text=#{Settings.system[:description]}%0a%0a＃" + "#{Settings.system[:title]}%0a＃" + "#{Settings.system[:hashtag]}%0a", {class: "btn btn-social btn-twitter", target: "_blank"}
               i.fa.fa-twitter.left
               = "Twitterで共有"

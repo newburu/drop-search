@@ -3,6 +3,7 @@ system:
   url: 'https://lineage-drop.herokuapp.com/'
   bbs_url: 'http://www.newburu.com/bbs/lineage-drop/joyful.cgi'
   description: '必要なアイテムを検索して、狩場を決める際の参考に！'
+  hashtag: 'リネージュ'
   twitter_site: newburu
   twitter:
     url: 'https://twitter.com/'
