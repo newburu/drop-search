@@ -2,7 +2,7 @@ h1 = t('.title')
 hr
 = search_form_for @q do |f|
   .row
-    .col-sm-5
+    .col-sm-12
       = f.input :name_cont, required: false, label: t('activerecord.attributes.map_area.name')
       = hidden_field_tag :mode, params[:mode]
   .btn-toolbar

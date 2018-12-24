@@ -7,6 +7,8 @@ class ItemsController < InheritedResources::Base
     @items = @q.result
     @items = @items.page(params[:page])
 
+    @item_kinds = ItemKind.all
+
     render layout: 'dialog' if params[:mode] == 'dialog'
   end
 
