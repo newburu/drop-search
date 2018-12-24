@@ -8,7 +8,7 @@ class PortalsController < ApplicationController
     # ログインしていなければ、TOPページに移動
     redirect_to root_url and return unless current_user.present?
     
-    @q = Item.search
+    @q = Item.ransack(params[:q])
     @q.sorts = 'name desc' if @q.sorts.empty?
     
     @items = @q.result
