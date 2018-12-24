@@ -3,12 +3,12 @@ hr
 = search_form_for @q do |f|
   .row
     .col-sm-12
-      = f.input :name_cont, required: false, label: t('activerecord.attributes.item.name')
-      = hidden_field_tag :mode, params[:mode]
-  .row
-    .col-sm-12
       = f.label t('activerecord.attributes.item.item_kind')
       = f.collection_select :item_kind_id_in, ItemKind.all, :id, :name, {include_blank: '指定なし'}, {class: 'form-control multiselect multiselect-primary', multiple: true}
+  .row
+    .col-sm-12
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.item.name')
+      = hidden_field_tag :mode, params[:mode]
   .btn-toolbar
     .btn-group.mr-2
       = button_tag type: 'submit', class: "btn btn-primary"
