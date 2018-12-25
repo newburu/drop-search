@@ -16,3 +16,8 @@ system:
       size: "52x75"
   send_dm:
     timing: [0,1,3,5,10]
+  link:
+    official:
+      url: 'http://www.ncsoft.jp/lineage/item/search/searchresult'
+      key:
+        item_name: 'query'

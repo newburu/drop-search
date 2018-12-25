@@ -19,6 +19,12 @@ hr
     = image_tag(src, size: '100x100')
 .card
   .card-header
+    strong = "#{t('.link.title')}"
+  .card-body
+    - url = "#{Settings.system.link.official.url}?#{Settings.system.link.official.key.item_name}=#{@item.name}"
+    = link_to t('.link.official'), url, class: "btn btn-primary", target: 'official'
+.card
+  .card-header
     strong = "#{t('.mob.name')}:"
   .card-body
     = render 'shared/mob_list', map_area_mobs: @item.map_area_mobs
