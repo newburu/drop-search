@@ -21,3 +21,4 @@ system:
       url: 'http://www.ncsoft.jp/lineage/item/search/searchresult'
       key:
         item_name: 'query'
+        server_id: 'serverId'

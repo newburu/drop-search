@@ -133,3 +133,6 @@ gem 'seed-fu'
 group :development do
   gem 'nokogiri'
 end
+
+# ENUM
+gem 'enum_help'

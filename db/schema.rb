@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_142456) do
+ActiveRecord::Schema.define(version: 2018_12_26_123427) do
 
   create_table "friendly_id_slugs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "slug", null: false
@@ -79,6 +79,14 @@ ActiveRecord::Schema.define(version: 2018_10_15_142456) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
+  create_table "user_options", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "server"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_options_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.integer "sign_in_count", default: 0
     t.datetime "current_sign_in_at"
@@ -103,4 +111,5 @@ ActiveRecord::Schema.define(version: 2018_10_15_142456) do
   add_foreign_key "mob_items", "mobs"
   add_foreign_key "mob_map_areas", "map_areas"
   add_foreign_key "mob_map_areas", "mobs"
+  add_foreign_key "user_options", "users"
 end

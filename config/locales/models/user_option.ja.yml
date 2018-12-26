@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      user_option:
+        server: サーバ
+
+  enums:
+    user_option:
+      server:
+        Sirius: シリウス
+        Isilorte: イシルロテ
+        Arcturus: アークトゥルス
+        Rigel: リゲル
+        Unity: ユニティ
+        Depolojiu: デポロジュー

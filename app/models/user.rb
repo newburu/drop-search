@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   devise :trackable, :omniauthable
   
+  # 設定
+  has_one :option, :class_name => "UserOption"
+  accepts_nested_attributes_for :option
+  
   validates :name, presence: true
 
   def self.new_with_session(params, session)

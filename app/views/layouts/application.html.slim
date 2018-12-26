@@ -47,6 +47,7 @@ html lang="en"
           - if login?
             span.navbar-text
               = "#{current_user.name}さん"
+            li.nav-item = link_to '設定', edit_user_option_path(current_user), {class: "nav-link"}
             li.nav-item = link_to 'ログアウト', destroy_user_session_path, {class: "nav-link"}
           - else
             li.nav-item = link_to "Twitterでログイン", user_twitter_omniauth_authorize_path, {class: "nav-link"}

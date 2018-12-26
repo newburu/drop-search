@@ -1,0 +1,8 @@
+h1 ユーザー設定
+ul
+  = simple_form_for(@user_option) do |f|
+    = f.submit class: "btn btn-primary"
+    br
+    br
+    .btn-group
+      = f.input :server, include_blank: false 
