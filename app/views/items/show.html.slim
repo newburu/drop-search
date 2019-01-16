@@ -21,7 +21,7 @@ hr
   .card-header
     strong = "#{t('.link.title')}"
   .card-body
-    - url = "#{Settings.system.link.official.url}?#{Settings.system.link.official.key.item_name}=#{@item.name}&#{Settings.system.link.official.key.server_id}=#{current_user.option.server_before_type_cast}"
+    - url = "#{Settings.system.link.official.url}?#{Settings.system.link.official.key.item_name}=#{@item.name}&#{Settings.system.link.official.key.server_id}=#{current_user.try(:option).try(:server_before_type_cast)}"
     = link_to t('.link.official'), url, class: "btn btn-primary", target: 'official'
 .card
   .card-header
